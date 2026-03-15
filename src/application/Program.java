@@ -1,15 +1,11 @@
 package application;
 
-import board_game.Posicao;
+import board_game.Tabuleiro;
 
 public class Program {
 
 	public static void main(String[] args) {
 		
-		Posicao pos = new Posicao(4, 7);
-		
-		System.out.println(pos);
-		
+		Tabuleiro tabu  = new Tabuleiro(8, 8);
 	}
-
 }
