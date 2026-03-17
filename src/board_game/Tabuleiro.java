@@ -30,7 +30,6 @@ public class Tabuleiro {
 	}
 
 	
-	
 	public Peca peca(int linha, int coluna) {
 		return pecas[linha][coluna];
 	}
@@ -39,4 +38,8 @@ public class Tabuleiro {
 		return pecas[pos.getLinha()][pos.getColuna()];
 	}
 	
+	public void lugarDaPeca(Peca peca, Posicao posicao) {
+		pecas[posicao.getLinha()][posicao.getColuna()] = peca;
+		peca.posicao = posicao;
+	}
 }
