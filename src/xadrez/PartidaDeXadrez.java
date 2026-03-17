@@ -1,5 +1,6 @@
 package xadrez;
 
+import board_game.Peca;
 import board_game.Posicao;
 import board_game.Tabuleiro;
 import xadrez_pecas.King;
@@ -22,6 +23,27 @@ public class PartidaDeXadrez {
 			}
 		}
 		return matriz;
+	}
+	
+	public PecaDeXadrez executarMovimentoXadrez(PosicaoDeXadrez posicaoAtual, PosicaoDeXadrez posicaoDesejada) {
+		Posicao atual = posicaoAtual.paraPosicao();
+		Posicao desejada = posicaoDesejada.paraPosicao();
+		validarPosicaoAtual(atual);
+		Peca pecaCapturada = facaOMovimento(atual, desejada);
+		return (PecaDeXadrez)pecaCapturada;			
+	}
+	
+	private Peca facaOMovimento(Posicao posicaoAtual, Posicao posicaoDesejada) {
+		Peca p = tabuleiro.removerPeca(posicaoAtual);
+		Peca pecaCapturada = tabuleiro.removerPeca(posicaoDesejada);
+		tabuleiro.lugarDaPeca(p, posicaoDesejada);
+		return pecaCapturada;
+	}
+	
+	private void validarPosicaoAtual(Posicao pos) {
+		if (!tabuleiro.temUmaPeca(pos)) {
+			throw new XadrezException("Não existe uma peça na posição atual");
+		}
 	}
 	
 	private void lugarDaNovaPeca(char coluna, int linha, PecaDeXadrez peca) {
