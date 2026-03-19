@@ -18,7 +18,7 @@ public class Program {
 		PartidaDeXadrez partida = new PartidaDeXadrez();
 		List<PecaDeXadrez> capturadas = new ArrayList<>();
 		
-		while (true) {
+		while (!partida.getCheckMate()) {
 			try {
 				UI.limpaTela();
 				UI.imprimirPartida(partida, capturadas);
@@ -50,5 +50,7 @@ public class Program {
 				sc.nextLine();
 			}
 		}
+		UI.limpaTela();
+		UI.imprimirPartida(partida, capturadas);
 	}
 }

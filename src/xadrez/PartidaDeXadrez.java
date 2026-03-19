@@ -15,6 +15,7 @@ public class PartidaDeXadrez {
 	private Cor jogadorAtual;
 	private int vez;
 	private boolean check;
+	private boolean checkMate;
 	private List<Peca> pecasNoTabuleiro = new ArrayList<>();
 	private List<Peca> pecasCapturadas = new ArrayList<>();
 
@@ -36,6 +37,10 @@ public class PartidaDeXadrez {
 	
 	public boolean getCheck() {
 		return check;
+	}
+	
+	public boolean getCheckMate() {
+		return checkMate;
 	}
 	
 	public PecaDeXadrez[][] getPecas() {
@@ -69,7 +74,12 @@ public class PartidaDeXadrez {
 		
 		check = (testeCheck(oponente(jogadorAtual))) ? true : false;
 		
-		nextTurn();
+		if (testCheckMate(oponente(jogadorAtual))) {
+			checkMate = true;
+		}
+		else {
+			nextTurn();
+		}
 		return (PecaDeXadrez)pecaCapturada;			
 	}
 	
@@ -146,6 +156,31 @@ public class PartidaDeXadrez {
 		}
 		return false;
 	}
+	
+	private boolean testCheckMate(Cor cor) {
+		if (!testeCheck(cor)) {
+			return false;
+		}
+		List<Peca> list = pecasNoTabuleiro.stream().filter(x -> ((PecaDeXadrez)x).getCor() == cor).collect(Collectors.toList());
+		for (Peca p : list) {
+			boolean[][] mat = p.movimentosPossiveis();
+			for (int i=0; i<tabuleiro.getLinhas(); i++) {
+				for (int j=0; j<tabuleiro.getColunas(); j++) {
+					if (mat[i][j]) {
+						Posicao origem = ((PecaDeXadrez)p).getPosicaoDeXadrez().paraPosicao();
+						Posicao destino = new Posicao(i,j);
+						Peca capturada = facaOMovimento(origem, destino);
+						boolean testeCheck = testeCheck(cor);
+						desfazerMovimento(origem, destino, capturada);
+						if (!testeCheck) {
+							return false;
+						}
+					}
+				}
+			}
+		}
+		return true;
+	}
 
 	
 	private void lugarDaNovaPeca(char coluna, int linha, PecaDeXadrez peca) {
@@ -155,7 +190,7 @@ public class PartidaDeXadrez {
 	
 	private void inicio() {
 		lugarDaNovaPeca('a', 1, new Torre(tabuleiro, Cor.BRANCO));
-		lugarDaNovaPeca('h', 1, new Torre(tabuleiro, Cor.BRANCO));
+		lugarDaNovaPeca('h', 7, new Torre(tabuleiro, Cor.BRANCO));
 		lugarDaNovaPeca('e', 8, new King(tabuleiro, Cor.PRETO));
 		lugarDaNovaPeca('e', 1,new King(tabuleiro, Cor.BRANCO));
 
