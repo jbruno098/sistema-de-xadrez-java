@@ -8,6 +8,7 @@ import board_game.Peca;
 import board_game.Posicao;
 import board_game.Tabuleiro;
 import xadrez_pecas.King;
+import xadrez_pecas.Peao;
 import xadrez_pecas.Torre;
 
 public class PartidaDeXadrez {
@@ -191,10 +192,31 @@ public class PartidaDeXadrez {
 	}
 	
 	private void inicio() {
+		// Brancas
 		lugarDaNovaPeca('a', 1, new Torre(tabuleiro, Cor.BRANCO));
-		lugarDaNovaPeca('h', 7, new Torre(tabuleiro, Cor.BRANCO));
-		lugarDaNovaPeca('e', 8, new King(tabuleiro, Cor.PRETO));
+		lugarDaNovaPeca('h', 1, new Torre(tabuleiro, Cor.BRANCO));
 		lugarDaNovaPeca('e', 1,new King(tabuleiro, Cor.BRANCO));
+		lugarDaNovaPeca('a', 2,new Peao(tabuleiro, Cor.BRANCO));
+		lugarDaNovaPeca('b', 2,new Peao(tabuleiro, Cor.BRANCO));
+		lugarDaNovaPeca('c', 2,new Peao(tabuleiro, Cor.BRANCO));
+		lugarDaNovaPeca('d', 2,new Peao(tabuleiro, Cor.BRANCO));
+		lugarDaNovaPeca('e', 2,new Peao(tabuleiro, Cor.BRANCO));
+		lugarDaNovaPeca('f', 2,new Peao(tabuleiro, Cor.BRANCO));
+		lugarDaNovaPeca('g', 2,new Peao(tabuleiro, Cor.BRANCO));
+		lugarDaNovaPeca('h', 2,new Peao(tabuleiro, Cor.BRANCO));
+
+		// Pretas
+		lugarDaNovaPeca('a', 8, new Torre(tabuleiro, Cor.PRETO));
+		lugarDaNovaPeca('h', 8, new Torre(tabuleiro, Cor.PRETO));
+		lugarDaNovaPeca('e', 8, new King(tabuleiro, Cor.PRETO));
+		lugarDaNovaPeca('a', 7,new Peao(tabuleiro, Cor.PRETO));
+		lugarDaNovaPeca('b', 7,new Peao(tabuleiro, Cor.PRETO));
+		lugarDaNovaPeca('c', 7,new Peao(tabuleiro, Cor.PRETO));
+		lugarDaNovaPeca('d', 7,new Peao(tabuleiro, Cor.PRETO));
+		lugarDaNovaPeca('e', 7,new Peao(tabuleiro, Cor.PRETO));
+		lugarDaNovaPeca('f', 7,new Peao(tabuleiro, Cor.PRETO));
+		lugarDaNovaPeca('g', 7,new Peao(tabuleiro, Cor.PRETO));
+		lugarDaNovaPeca('h', 7,new Peao(tabuleiro, Cor.PRETO));
 
 	}
 
