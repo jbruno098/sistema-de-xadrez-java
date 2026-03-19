@@ -56,6 +56,9 @@ public class UI { // Interface do Usuario
 		System.out.println();
 		System.out.println("Jogada: " + partida.getVez());
 		System.out.println("Aguardando jogador: " + partida.getJogadorAtual());
+		if (partida.getCheck()) {
+			System.out.println("CHECK!");
+		}
 	}
 	
 	public static void imprimirTabuleiro(PecaDeXadrez[][] pecas) {
