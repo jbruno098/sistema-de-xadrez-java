@@ -1,17 +1,13 @@
-# ♟️ Sistema de Xadrez em Java
+Sistema de Xadrez em Java
 
-## 📌 Sobre o projeto
+## Sobre o projeto
 
-Este projeto é uma implementação completa de um **jogo de xadrez via terminal**, desenvolvido em **Java**, com o objetivo principal de praticar e consolidar os conceitos de **Programação Orientada a Objetos (POO)**.
+Este projeto é uma implementação completa de um jogo de xadrez via terminal, desenvolvido em Java, com o objetivo principal de praticar e consolidar os conceitos de Programação Orientada a Objetos (POO).
 
 A aplicação simula uma partida real de xadrez, aplicando regras oficiais do jogo como movimentação válida das peças, controle de turnos, xeque e xeque-mate.
 
-💡 Projeto desenvolvido durante meus estudos no curso de Java do professor Nélio Alves.
-Esse foi meu **primeiro projeto maior utilizando orientação a objetos na prática**, onde consegui entender melhor como sistemas reais são estruturados.
-
----
-
-## 🧠 Conceitos de Orientação a Objetos aplicados
+Projeto desenvolvido durante meus estudos no curso de Java do professor Nélio Alves.
+Esse foi meu primeiro projeto maior utilizando orientação a objetos na prática, onde consegui entender melhor como sistemas reais são estruturados.
 
 Durante o desenvolvimento foram utilizados diversos conceitos fundamentais da POO:
 
@@ -26,9 +22,7 @@ Durante o desenvolvimento foram utilizados diversos conceitos fundamentais da PO
 
 O projeto foi essencial para aprender a separar responsabilidades e modelar problemas reais utilizando objetos.
 
----
-
-## 🏗️ Estrutura do sistema
+## Estrutura do sistema
 
 O código foi organizado em camadas, separando bem as responsabilidades:
 
@@ -41,30 +35,24 @@ O código foi organizado em camadas, separando bem as responsabilidades:
 
 Essa estrutura segue boas práticas de organização orientada a objetos, facilitando manutenção e entendimento do sistema.
 
----
+##  Funcionalidades
 
-## ♟️ Funcionalidades
+*  Movimentação válida das peças
+* Validação de jogadas
+* Captura de peças
+* Controle de turnos
+*  Detecção de xeque
+*  Detecção de xeque-mate
+* Interface em modo texto (console)
 
-* ✅ Movimentação válida das peças
-* ✅ Validação de jogadas
-* ✅ Captura de peças
-* ✅ Controle de turnos
-* ✅ Detecção de xeque
-* ✅ Detecção de xeque-mate
-* ✅ Interface em modo texto (console)
-
----
-
-## 🛠️ Tecnologias utilizadas
+## Tecnologias utilizadas
 
 * Java
 * Programação Orientada a Objetos (POO)
 * Aplicação Console (Terminal)
 * Git e GitHub para versionamento
 
----
-
-## ▶️ Como executar o projeto
+## Como executar o projeto
 
 1. Clone o repositório:
 
@@ -84,7 +72,7 @@ Program.java
 
 ---
 
-## 📚 Aprendizados
+## Aprendizados
 
 Esse projeto foi um divisor de águas no meu aprendizado em Java.
 
@@ -98,28 +86,23 @@ Antes eu focava apenas em fazer o código funcionar. Durante o desenvolvimento p
 
 Muitas soluções utilizadas no projeto eram abordagens que eu não imaginaria inicialmente, o que contribuiu muito para evoluir minha forma de pensar programação.
 
----
+## Próximos passos
 
-## 🚀 Próximos passos
-
-* Implementar interface gráfica (GUI)
+* Implementar interface gráfica
 * Melhorar a experiência do usuário
 * Adicionar salvamento de partidas
 * Aplicar padrões de projeto (Design Patterns)
 
----
-
-## 💭 Reflexão pessoal
+## Reflexão pessoal
 
 Esse projeto marcou o momento em que comecei a entender orientação a objetos de verdade, não apenas na teoria.
-
 Aqui percebi como cada classe possui uma responsabilidade específica e como a organização correta do código torna problemas complexos muito mais simples de resolver.
 
 ---
 
-## 👨‍💻 Autor
+## Autor
 
-Desenvolvido por **Bruno**
+Desenvolvido por Bruno
 Estudante de Análise e Desenvolvimento de Sistemas.
 
-📌 Projeto com fins educacionais e foco em aprendizado.
+Projeto com fins educacionais e foco em aprendizado.
